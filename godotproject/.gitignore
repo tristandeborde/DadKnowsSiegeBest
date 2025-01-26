@@ -1,3 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
+.import/
+export.cfg
+export_presets.cfg
+.DS_Store
+**/.DS_Store
 /android/

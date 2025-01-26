@@ -11,17 +11,17 @@ config_version=5
 [application]
 
 config/name="GodotProject"
-run/main_scene="res://Turret.tscn"
+run/main_scene="res://scenes/Turret.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Prompts="*res://prompts.gd"
-AgentPolicies="*res://AgentPolicies.gd"
+Prompts="*res://scripts/prompts.gd"
+AgentPolicies="*res://entities/AgentPolicies.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
 Tts="*res://Assets/Objects/tts.tscn"
-CameraHandler="*res://CameraHandler.gd"
+CameraHandler="*res://scripts/CameraHandler.gd"
 
 [editor_plugins]
 

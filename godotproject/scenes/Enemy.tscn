@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://bvw43idesrdki"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_lchjc"]
-[ext_resource type="Shader" uid="uid://drcbuaf1evjrk" path="res://CircleShader.tres" id="2_5dym6"]
+[ext_resource type="Script" path="res://entities/Enemy.gd" id="1_lchjc"]
+[ext_resource type="Shader" uid="uid://drcbuaf1evjrk" path="res://shaders/CircleShader.tres" id="2_5dym6"]
 [ext_resource type="ArrayMesh" uid="uid://bkv3e6fm7cmy6" path="res://Assets/Objects/circlemesh.obj" id="2_at7ju"]
-[ext_resource type="Script" path="res://HPBillboard.gd" id="2_billboard"]
+[ext_resource type="Script" path="res://ui/HPBillboard.gd" id="2_billboard"]
 [ext_resource type="PackedScene" uid="uid://7dfidybg65bj" path="res://Assets/Models/simple_low_poly_crown.glb" id="2_n1use"]
 [ext_resource type="AudioStream" uid="uid://bnwr1cs3800uy" path="res://Assets/Audio/beating_meat_cuts.mp3" id="3_2mbu4"]
 [ext_resource type="PackedScene" uid="uid://lve03lwoqvf4" path="res://Assets/Models/weapons/shield.glb" id="4_87481"]
