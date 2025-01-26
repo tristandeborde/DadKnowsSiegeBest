@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b776yxiv786rc"]
+
+[ext_resource type="Script" path="res://path_follow_3d.gd" id="1_jprv8"]
+
+[sub_resource type="Curve3D" id="Curve3D_454h5"]
+bake_interval = 154.81
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.38419e-07, -2.833, 14.531, 0, 0, 0, 0, 0, 0, -1.5378e-05, -5.64079, -7.4913, 0, 0, 0, 0, 0, 0, -1.54078e-05, -2.72934, -24.5697, 0, 0, 0, 0, 0, 0, -1.64807e-05, 4.30242, -34.2717, 0, 0, 0, 0, 0, 0, -1.76132e-05, 20.4035, -47.4004, 0, 0, 0, 0, 0, 0, -1.94609e-05, 42.2046, -65.2963, 0, 0, 0, 0, 0, 0, 3.25441e-05, 65.4763, -82.4614),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[node name="Path3D" type="Path3D"]
+transform = Transform3D(-1, -8.74228e-08, 4.09113e-14, -4.9005e-08, 0.560552, 0.828119, -7.23965e-08, 0.828119, -0.560552, 0.293781, 22.2541, -47.0694)
+curve = SubResource("Curve3D_454h5")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(0.999999, -8.96846e-08, 7.03422e-07, 3.55271e-15, 0.991967, 0.126473, -7.09118e-07, -0.126473, 0.991967, 2.38419e-07, -2.833, 14.531)
+script = ExtResource("1_jprv8")
+
+[node name="CameraTop" type="Camera3D" parent="PathFollow3D"]
+transform = Transform3D(1, 0, -7.10543e-15, -1.42109e-14, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0)
+current = true

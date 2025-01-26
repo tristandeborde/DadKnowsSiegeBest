@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://fdh1pylw5okw"]
+
+[ext_resource type="Script" path="res://Turret.gd" id="1_g5pr8"]
+[ext_resource type="PackedScene" uid="uid://bbkg43itatuax" path="res://Assets/Objects/turret_model.tscn" id="2_uetm7"]
+[ext_resource type="PackedScene" uid="uid://bwcs5v33bkrlt" path="res://Assets/Particles/CanonSmoke.tscn" id="3_816lb"]
+[ext_resource type="AudioStream" uid="uid://bnyn0fv2ehl4p" path="res://Assets/Audio/canon_cut.mp3" id="7_j75cf"]
+
+[sub_resource type="Animation" id="Animation_kiwcg"]
+resource_name = "GunShooting"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.252, -0.252115), Vector3(0, -0.252, 0.398), Vector3(0, -0.252, -0.252115)]
+}
+
+[sub_resource type="Animation" id="Animation_jiokw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.252, -0.252115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kedb4"]
+_data = {
+"GunShooting": SubResource("Animation_kiwcg"),
+"RESET": SubResource("Animation_jiokw")
+}
+
+[node name="Turret" type="Node3D"]
+transform = Transform3D(1.21915, 0, 0, 0, 1.21915, 0, 0, 0, 1.21915, 0.0134895, 1.96507, -0.345398)
+script = ExtResource("1_g5pr8")
+force_magnitude = 60.0
+
+[node name="TurretModel" parent="." instance=ExtResource("2_uetm7")]
+
+[node name="smoke" parent="TurretModel" instance=ExtResource("3_816lb")]
+transform = Transform3D(0.228428, 0, 0, 0, 0.228428, 0, 0, 0, 0.228428, 0, -0.245511, -1.47638)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077424, -4.76837e-07, 0.00626969)
+target_position = Vector3(0, 0, -50)
+debug_shape_custom_color = Color(0.921531, 0, 0.275724, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TurretModel")
+libraries = {
+"": SubResource("AnimationLibrary_kedb4")
+}
+
+[node name="CannonStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_j75cf")
+volume_db = 19.692

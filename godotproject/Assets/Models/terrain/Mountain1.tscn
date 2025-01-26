@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b62ps27pvjrxa"]
+
+[ext_resource type="PackedScene" uid="uid://dt4gwm0mm1i7b" path="res://Assets/Models/low_poly_mountain.glb" id="1_f8l2y"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_f8l2y")]
+
+[node name="node_Mountain3_-1129440_1" parent="Sketchfab_model/root/GLTF_SceneRootNode/UnityGlTF_root_0" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.37114e-08, 0, -4.37114e-08, 1, 0, 0, 0)

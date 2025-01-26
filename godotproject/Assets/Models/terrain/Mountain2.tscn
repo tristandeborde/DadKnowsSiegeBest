@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq2s47noqegpe"]
+
+[ext_resource type="PackedScene" uid="uid://py2nlsmte627" path="res://Assets/Models/low_poly_mountain_free.glb" id="1_lje65"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_lje65")]
+
+[node name="Mountain" parent="Sketchfab_model/a73fca67422b4366866acaeb7c839162_fbx/RootNode" index="0"]
+transform = Transform3D(918.54, 0, 0, 0, 918.54, -0.000149649, 0, 0.000149649, 918.54, 0, 0, 0)

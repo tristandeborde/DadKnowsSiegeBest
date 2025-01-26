@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cga0vhga185wv"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_3o47d"]
+[ext_resource type="Script" path="res://IntroText.gd" id="2_mv47v"]
+[ext_resource type="Script" path="res://Assets/camera_intro.gd" id="2_wdu3a"]
+[ext_resource type="AudioStream" uid="uid://ehbldgrqnw0e" path="res://Assets/Audio/intro_voice.mp3" id="3_x880t"]
+
+[sub_resource type="Curve3D" id="Curve3D_gqme4"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.88635, 4.12177, 14.8636, 0, 0, 0, 0, 0, 0, -5.19279, 434.083, -15.0935, 0, 0, 0, 0, 0, 0, 2.12959, 634.667, -252.937),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Theme" id="Theme_jpo6s"]
+default_font_size = 58
+
+[node name="Intro" type="Node3D"]
+script = ExtResource("1_3o47d")
+ANIMATION_DURATION = 1.0
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(-1, -6.10445e-08, 1.5684e-07, 1.83711e-08, -0.965925, -0.258819, 1.67296e-07, -0.258819, 0.965925, -2.52202e-06, 554.67, 365.309)
+curve = SubResource("Curve3D_gqme4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.973154, 0.229377, 0.0164217, 0, 0.0714062, -0.997404, -0.229965, 0.970665, 0.0694926, 1.88635, 4.12177, 14.8636)
+
+[node name="CameraIntro" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-0.894456, 0.298345, -0.333074, -0.345566, -0.933927, 0.0914543, -0.283782, 0.196901, 0.938455, 0, 0, 0)
+script = ExtResource("2_wdu3a")
+
+[node name="IntroUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mv47v")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="IntroUI"]
+layout_mode = 2
+offset_left = -576.0
+offset_top = -106.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="IntroUI/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_jpo6s")
+bbcode_enabled = true
+text = "This is a placeholder for the tuto textThisisa placeholder for the tuto text"
+fit_content = true
+scroll_active = false
+
+[node name="ColorRect" type="ColorRect" parent="IntroUI/VBoxContainer2/RichTextLabel"]
+z_index = -1
+layout_mode = 2
+offset_left = 3.0
+offset_top = -52.0
+offset_right = 1155.0
+offset_bottom = 158.0
+color = Color(0.188235, 0.188235, 0.188235, 0.517647)
+
+[node name="IntroVoice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x880t")
+
+[connection signal="stopped_typing" from="IntroUI" to="." method="_on_intro_ui_stopped_typing"]

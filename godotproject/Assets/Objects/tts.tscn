@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://caaop6xkx6oqy"]
+
+[ext_resource type="Script" path="res://tts.gd" id="1_b6n65"]
+
+[node name="TTS" type="Node"]
+script = ExtResource("1_b6n65")
+
+[node name="TTSStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="TTSHTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="TTSHTTPRequest" to="." method="_on_ttshttp_request_request_completed"]

@@ -1,0 +1,155 @@
+[gd_scene load_steps=3 format=3 uid="uid://du6iykth7kbpg"]
+
+[ext_resource type="PackedScene" uid="uid://c7qiq2cv37kcc" path="res://Assets/Models/castle_low_polymodular.glb" id="1_crwcb"]
+[ext_resource type="PackedScene" uid="uid://c7kllts0qfwd3" path="res://Assets/Objects/CastleFront.tscn" id="2_lnxsq"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_crwcb")]
+
+[node name="Model" parent="." index="0" instance=ExtResource("2_lnxsq")]
+
+[node name="Sketchfab_model" parent="." index="1"]
+visible = false
+
+[node name="Cube_007_0" parent="Sketchfab_model/Root/Cube_007" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_007_1" parent="Sketchfab_model/Root/Cube_007" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_007_2" parent="Sketchfab_model/Root/Cube_007" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_007_3" parent="Sketchfab_model/Root/Cube_007" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_008_0" parent="Sketchfab_model/Root/Cube_008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_008_1" parent="Sketchfab_model/Root/Cube_008" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_008_2" parent="Sketchfab_model/Root/Cube_008" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_008_3" parent="Sketchfab_model/Root/Cube_008" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Plane_001_0" parent="Sketchfab_model/Root/Plane_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Plane_001_1" parent="Sketchfab_model/Root/Plane_001" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Plane_001_2" parent="Sketchfab_model/Root/Plane_001" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Cube_013_0" parent="Sketchfab_model/Root/Cube_013" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_013_1" parent="Sketchfab_model/Root/Cube_013" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_013_2" parent="Sketchfab_model/Root/Cube_013" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_014_0" parent="Sketchfab_model/Root/Cube_014" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Cube_014_1" parent="Sketchfab_model/Root/Cube_014" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Cube_014_2" parent="Sketchfab_model/Root/Cube_014" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Cube_016_0" parent="Sketchfab_model/Root/Cube_014/Cube_016" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, -5.81026e-15)
+
+[node name="Cube_015_0" parent="Sketchfab_model/Root/Cube_014/Cube_015" index="0"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 102.566, 26.1671, 8.21098)
+
+[node name="Cube_017" parent="Sketchfab_model/Root" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, -131.913, -0.0499916)
+
+[node name="Cube_017_0" parent="Sketchfab_model/Root/Cube_017" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_017_1" parent="Sketchfab_model/Root/Cube_017" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_017_2" parent="Sketchfab_model/Root/Cube_017" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_018_0" parent="Sketchfab_model/Root/Cube_018" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_018_1" parent="Sketchfab_model/Root/Cube_018" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_018_2" parent="Sketchfab_model/Root/Cube_018" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_019" parent="Sketchfab_model/Root" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.0663, -117.895, -0.0452867)
+
+[node name="Cube_019_0" parent="Sketchfab_model/Root/Cube_019" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_019_1" parent="Sketchfab_model/Root/Cube_019" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_019_2" parent="Sketchfab_model/Root/Cube_019" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_020_0" parent="Sketchfab_model/Root/Cube_020" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1671, 102.894, 0)
+
+[node name="Cube_020_1" parent="Sketchfab_model/Root/Cube_020" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1671, 102.894, 0)
+
+[node name="Cube_020_2" parent="Sketchfab_model/Root/Cube_020" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1671, 102.894, 0)
+
+[node name="Cube_021_0" parent="Sketchfab_model/Root/Cube_021" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_021_1" parent="Sketchfab_model/Root/Cube_021" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_021_2" parent="Sketchfab_model/Root/Cube_021" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_022_0" parent="Sketchfab_model/Root/Cube_022" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_022_1" parent="Sketchfab_model/Root/Cube_022" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_022_2" parent="Sketchfab_model/Root/Cube_022" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_023_0" parent="Sketchfab_model/Root/Cube_023" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_023_1" parent="Sketchfab_model/Root/Cube_023" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_023_2" parent="Sketchfab_model/Root/Cube_023" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_024_0" parent="Sketchfab_model/Root/Cube_024" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1671, 102.894, 0)
+
+[node name="Cube_024_1" parent="Sketchfab_model/Root/Cube_024" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1671, 102.894, 0)
+
+[node name="Cube_024_2" parent="Sketchfab_model/Root/Cube_024" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1671, 102.894, 0)
+
+[node name="Cube_025_0" parent="Sketchfab_model/Root/Cube_025" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_025_1" parent="Sketchfab_model/Root/Cube_025" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)
+
+[node name="Cube_025_2" parent="Sketchfab_model/Root/Cube_025" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.894, 26.1671, 0)

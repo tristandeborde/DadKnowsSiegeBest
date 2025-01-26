@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmxp0umvtq4xo"]
+
+[ext_resource type="AudioStream" uid="uid://bnwr1cs3800uy" path="res://Assets/Audio/beating_meat_cuts.mp3" id="1_lv2lr"]
+
+[sub_resource type="Curve" id="Curve_0b85e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nmwhp"]
+curve = SubResource("Curve_0b85e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yxefe"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_nmwhp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsi4m"]
+albedo_color = Color(0.602221, 0.317656, 0.135616, 1)
+emission_enabled = true
+emission = Color(0.949223, 0.361925, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oqe53"]
+material = SubResource("StandardMaterial3D_vsi4m")
+top_radius = 0.1
+bottom_radius = 0.0
+
+[node name="ImpactParticle" type="GPUParticles3D"]
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_yxefe")
+draw_pass_1 = SubResource("CylinderMesh_oqe53")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_lv2lr")
+volume_db = 44.952
+autoplay = true

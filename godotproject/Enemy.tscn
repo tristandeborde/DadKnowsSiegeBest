@@ -1,0 +1,158 @@
+[gd_scene load_steps=19 format=3 uid="uid://bvw43idesrdki"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_lchjc"]
+[ext_resource type="Shader" uid="uid://drcbuaf1evjrk" path="res://CircleShader.tres" id="2_5dym6"]
+[ext_resource type="ArrayMesh" uid="uid://bkv3e6fm7cmy6" path="res://Assets/Objects/circlemesh.obj" id="2_at7ju"]
+[ext_resource type="Script" path="res://HPBillboard.gd" id="2_billboard"]
+[ext_resource type="PackedScene" uid="uid://7dfidybg65bj" path="res://Assets/Models/simple_low_poly_crown.glb" id="2_n1use"]
+[ext_resource type="AudioStream" uid="uid://bnwr1cs3800uy" path="res://Assets/Audio/beating_meat_cuts.mp3" id="3_2mbu4"]
+[ext_resource type="PackedScene" uid="uid://lve03lwoqvf4" path="res://Assets/Models/weapons/shield.glb" id="4_87481"]
+[ext_resource type="AudioStream" uid="uid://cjtal3n6kjl3v" path="res://Assets/Audio/sand_falling_cuts.mp3" id="4_odr0v"]
+[ext_resource type="PackedScene" uid="uid://bwep0kdvhyee2" path="res://Assets/Models/weapons/the_sacred_ameno_staff.glb" id="5_df6hw"]
+[ext_resource type="PackedScene" uid="uid://phq55qv1x0vy" path="res://Assets/Models/weapons/wings.glb" id="6_my5g7"]
+[ext_resource type="PackedScene" uid="uid://bwcs5v33bkrlt" path="res://Assets/Particles/CanonSmoke.tscn" id="7_waoxf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eydmp"]
+render_priority = 0
+shader = ExtResource("2_5dym6")
+shader_parameter/ColorParameter = Color(0.317647, 0.513726, 0.647059, 1)
+shader_parameter/Vector2Parameter = Vector2(0, -0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gekiy"]
+size = Vector3(0.8, 1, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3ijk"]
+transparency = 1
+albedo_color = Color(0.0497157, 0.661339, 0.750422, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_debug"]
+transparency = 1
+albedo_color = Color(1, 0.2, 0.2, 0.5)
+
+[sub_resource type="SphereMesh" id="SphereMesh_target"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(0.8, 0.2, 0.2, 0.8)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+script = ExtResource("1_lchjc")
+
+[node name="Crown" parent="." instance=ExtResource("2_n1use")]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 1.03402, 0)
+visible = false
+
+[node name="HealingRadius" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0.00297177, -0.459471, -0.119126)
+visible = false
+material_override = SubResource("ShaderMaterial_eydmp")
+mesh = ExtResource("2_at7ju")
+skeleton = NodePath("../SoldierBody")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gekiy")
+
+[node name="SoldierBody" type="CSGCylinder3D" parent="."]
+radius = 0.4
+height = 1.0
+material = SubResource("StandardMaterial3D_b3ijk")
+
+[node name="SoldierHead" type="CSGSphere3D" parent="SoldierBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+radius = 0.25
+material = SubResource("StandardMaterial3D_b3ijk")
+
+[node name="Weapons" type="Node3D" parent="SoldierBody"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Shield" parent="SoldierBody/Weapons" instance=ExtResource("4_87481")]
+transform = Transform3D(-3.26494e-05, 0, 0.000999467, 0, 0.001, 0, -0.000999467, 0, -3.26494e-05, 0.391948, 0.254214, 0.57859)
+visible = false
+
+[node name="Staff" parent="SoldierBody/Weapons" instance=ExtResource("5_df6hw")]
+transform = Transform3D(1, 0, 0, 0, -0.0228444, 0.999739, 0, -0.999739, -0.0228444, 0.569327, 0.53308, 0.360938)
+visible = false
+
+[node name="Sandals" parent="SoldierBody/Weapons" instance=ExtResource("6_my5g7")]
+transform = Transform3D(-0.1, 0, -8.74228e-09, 1.99868e-09, 0.0973515, -0.0228623, 8.51074e-09, -0.0228623, -0.0973515, 0, 0.100494, -0.313155)
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+visible = false
+material = SubResource("StandardMaterial3D_b3ijk")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+path_max_distance = 3.0
+avoidance_enabled = true
+radius = 1.0
+max_speed = 5.0
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0.2, 0.2, 1)
+
+[node name="TargetMarker" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.998249)
+visible = false
+material_override = SubResource("StandardMaterial3D_debug")
+mesh = SubResource("SphereMesh_target")
+
+[node name="HPBar" type="SubViewportContainer" parent="."]
+top_level = true
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="HPBar"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(100, 25)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="HPBar/SubViewport"]
+custom_minimum_size = Vector2(100, 10)
+offset_right = 100.0
+offset_bottom = 10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fill")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="TargetDebug" type="Label" parent="HPBar/SubViewport"]
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 0.8)
+theme_override_font_sizes/font_size = 8
+text = "Not Targeted"
+horizontal_alignment = 1
+
+[node name="Billboard" type="Node3D" parent="HPBar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("2_billboard")
+
+[node name="HitAudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_2mbu4")
+volume_db = 50.285
+
+[node name="SandAudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_odr0v")
+volume_db = 28.952
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("7_waoxf")]

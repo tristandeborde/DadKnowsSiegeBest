@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbkg43itatuax"]
+
+[ext_resource type="Material" uid="uid://t6f2hghde3h2" path="res://Assets/Materials/Black.tres" id="1_ko4pu"]
+[ext_resource type="PackedScene" uid="uid://bmuu4a34sju8t" path="res://Assets/Models/canon/canon.glb" id="2_0tyls"]
+
+[node name="TurretModel" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.252, -0.252115)
+size = Vector3(0.1, 0.1, 0.1)
+material = ExtResource("1_ko4pu")
+
+[node name="canon" parent="." instance=ExtResource("2_0tyls")]

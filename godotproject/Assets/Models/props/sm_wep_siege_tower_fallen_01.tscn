@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2btfilwe88ei"]
+
+[ext_resource type="PackedScene" uid="uid://brl70kqtuh18a" path="res://Assets/Models/SM_Wep_Siege_Tower_Fallen_01.fbx" id="1_t7p1w"]
+
+[node name="SM_Wep_Siege_Tower_Fallen_01" instance=ExtResource("1_t7p1w")]

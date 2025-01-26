@@ -1,0 +1,22 @@
+{
+    "id": "571b7e57910648b1857dc59efc827bf5",
+    "object": "chat.completion",
+    "created": 1737761749,
+    "model": "mistral-large-latest",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "tool_calls": null,
+                "content": "```html\n<grammar>\n    if health < 0.3 and is_targeted: return [hide_behind_nearest_obstacle]\n    if health < 0.5 and distance_to_nearest_obstacle_forward < 5: return [hide_behind_nearest_obstacle_forward, circumvent_obstacle]\n    if is_targeted and distance_to_nearest_obstacle < 3: return [hide_behind_nearest_obstacle]\n    if is_targeted and distance_to_nearest_obstacle >= 3: return [move_towards_goal, hide_behind_nearest_obstacle]\n    if advancement > 0.8: return [move_towards_goal]\n    if True: return [move_towards_goal]\n</grammar>\n```"
+            },
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 767,
+        "total_tokens": 979,
+        "completion_tokens": 212
+    }
+}

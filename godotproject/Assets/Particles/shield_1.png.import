@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dpiinpcujdkhd"
+path.s3tc="res://.godot/imported/shield_1.png-6ebdbeebc33e68b031b580c3b3fa6b4c.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "7bd718ed0d40466ae5b8b252eefe3b05"
+}
+
+[deps]
+
+source_file="res://Assets/Particles/shield_1.png"
+dest_files=["res://.godot/imported/shield_1.png-6ebdbeebc33e68b031b580c3b3fa6b4c.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://Assets/Particles/shield_2.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

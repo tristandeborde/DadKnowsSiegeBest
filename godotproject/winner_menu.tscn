@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8sfn6o2k0o6y"]
+
+[ext_resource type="Script" path="res://winner_menu.gd" id="1_onbob"]
+
+[node name="WinnerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onbob")
+
+[node name="WinnerButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 337.0
+offset_top = 350.0
+offset_right = -304.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.989413)
+text = "Back to main menu"
+
+[connection signal="pressed" from="WinnerButton" to="." method="_on_button_pressed"]

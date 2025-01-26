@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://qomnaw08gos"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_axf7b"]
+
+[node name="Menu" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.992298)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_axf7b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 435.0
+offset_top = 312.406
+offset_right = -435.0
+offset_bottom = -309.594
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
