@@ -2,6 +2,9 @@
 
 A RTS game à la Total War, where you control your army through natural language! Created for the 2025 Mistral AI Game Jam, with the theme `"You don't control the character."`
 
+[![Dad Knows Siege Best Gameplay](https://img.youtube.com/vi/PJQktaTWGQM/0.jpg)](https://www.youtube.com/watch?v=PJQktaTWGQM)
+
+
 ## 🎮 Concept
 
 In this Total War-inspired RTS, you play as the ghost of a veteran warrior watching over your strategically-challenged son during a siege battle. At the beginning of each assault, you provide tactical advice through natural language, which gets parsed into an actionable battle algorithm.
